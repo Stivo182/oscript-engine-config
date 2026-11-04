@@ -28,6 +28,7 @@
   {"name":"invalid-hyphen-stops", "text":"research.a=one;bad-key=x;research.b=two", "keys":["research.a","bad-key","research.b"], "expected":["[one]","<missing>","<missing>"]},
   {"name":"empty-key-stops", "text":"research.a=one;=x;research.b=two", "keys":["research.a","research.b"], "expected":["[one]","<missing>"]},
   {"name":"missing-equals-stops", "text":"research.a=one;bad;research.b=two", "keys":["research.a","bad","research.b"], "expected":["[one]","<missing>","<missing>"]},
+  {"name":"missing-equals-at-end-stops", "text":"research.a=one;bad", "keys":["research.a","bad"], "expected":["[one]","<missing>"]},
   {"name":"unicode-letters", "text":"Ж値_1.ok=unicode;research.a=tail", "keys":["Ж値_1.ok","research.a"], "expected":["[unicode]","[tail]"]},
   {"name":"combining-mark-stops", "text":"research.a=one;é=x;research.b=two", "keys":["research.a","é","research.b"], "expected":["[one]","<missing>","<missing>"]},
   {"name":"whitespace-only-errors", "text":" \t", "error":"ArgumentOutOfRangeException"},
